@@ -1,110 +1,341 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sign Up| TailAdmin - Tailwind CSS Admin Dashboard Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-    h1 {
-      font-weight: 300; /* Bold */
-    }
-    p {
-      font-weight: 200; /* Light */
-    }
-  </style>
-</head>
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 p-6">
+  </head>
+  <body
+    x-data="{ page: 'comingSoon', 'loaded': true, 'darkMode': false, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark bg-gray-900': darkMode === true}"
+  >
+    <!-- ===== Preloader Start ===== -->
+    <include src="./partials/preloader.html"></include>
+    <!-- ===== Preloader End ===== -->
 
-  <div class="w-[500px] h-[480px] max-w-2xl bg-white rounded-2xl shadow-2xl py-4 px-6">
-    
-    <!-- Heading -->
-    <div class="text-center mb-4">
-      <h3 class="text-xl font-semibold text-gray-800 mb-1">Welcome To Medimate</h3>
-      <p class="text-gray-600 text-sm">
-        Just tell us a few things about yourself and we'll take care of the rest.
-      </p>
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="relative p-6 bg-white z-1 dark:bg-gray-900 sm:p-0">
+      <div
+        class="flex flex-col justify-center w-full h-screen dark:bg-gray-900 sm:p-0 lg:flex-row"
+      >
+        <!-- Form -->
+        <div class="flex flex-col flex-1 w-full lg:w-1/2">
+          <div class="w-full max-w-md pt-5 mx-auto sm:py-5">
+            <a
+              href="index.html"
+              class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            >
+              <svg
+                class="stroke-current"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M12.7083 5L7.5 10.2083L12.7083 15.4167"
+                  stroke=""
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Back to dashboard
+            </a>
+          </div>
+          <div
+            class="flex flex-col justify-center flex-1 w-full max-w-md mx-auto"
+          >
+            <div class="mb-5 ">
+              <h1
+                class="mb-2 text-3xl text-center font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md"
+              >
+                Sign Up
+              </h1>
+              
+            </div>
+            <div>
+             <div class="relative">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Npi<span class="text-error-500">*</span>
+                      
+                      </label>
+                      <input
+                        type="text"
+                        id="Npi"
+                        name="Npi"
+                        placeholder="........."
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                       
+                      </label>
+                    </div>
+              <div class="relative py-3 sm:py-5">
+                <div class="absolute inset-0 flex items-center">
+                  <div
+                    class="w-full border-t border-gray-200 dark:border-gray-800"
+                  ></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                  <span
+                    class="p-2 text-gray-400 bg-white dark:bg-gray-900 sm:px-5 sm:py-2"
+                    >Or</span
+                  >
+                </div>
+              </div>
+              <form>
+                <div class="space-y-5">
+                  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <!-- First Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        First Name<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="fname"
+                        name="fname"
+                        placeholder="Enter your first name"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                    <!-- Last Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Last Name<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="lname"
+                        name="lname"
+                        placeholder="Enter your last name"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <!-- First Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Password<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your Password"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                    <!-- Last Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Confirm Password<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="password"
+                        name="password"
+                        placeholder="Enter Confirm Password"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <!-- First Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Phone Number<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter Your Phone Number"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                    <!-- Last Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Country<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="Country"
+                        name="Country"
+                        placeholder="Enter Your Country"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <!-- First Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Email<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your Email"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                    <!-- Last Name -->
+                    <div class="sm:col-span-1">
+                      <label
+                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                      >
+                        Occupation<span class="text-error-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="occupation"
+                        name="occupation"
+                        placeholder="Enter Your Occupation"
+                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                      />
+                    </div>
+                  </div>
+                  <!-- Email -->
+                
+                  <!-- Checkbox -->
+
+                  <div>
+                    <div x-data="{ checkboxToggle: false }">
+                      <label
+                        for="checkboxLabelOne"
+                        class="flex items-start text-sm font-normal text-gray-700 cursor-pointer select-none dark:text-gray-400"
+                      >
+                        <div class="relative">
+                          <input
+                            type="checkbox"
+                            id="checkboxLabelOne"
+                            class="sr-only"
+                            @change="checkboxToggle = !checkboxToggle"
+                          />
+                          <div
+                            :class="checkboxToggle ? 'border-brand-500 bg-brand-500' : 'bg-transparent border-gray-300 dark:border-gray-700'"
+                            class="mr-3 flex h-5 w-5 items-center justify-center rounded-md border-[1.25px]"
+                          >
+                            <span :class="checkboxToggle ? '' : 'opacity-0'">
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11.6666 3.5L5.24992 9.91667L2.33325 7"
+                                  stroke="white"
+                                  stroke-width="1.94437"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <p
+                          class="inline-block font-normal text-gray-500 dark:text-gray-400"
+                        >
+                          By creating an account means you agree to the
+                          <span class="text-gray-800 dark:text-white/90">
+                            Terms and Conditions,
+                          </span>
+                          and our
+                          <span class="text-gray-800 dark:text-white">
+                            Privacy Policy
+                          </span>
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div>
+                    <button
+                      class="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div class="mt-5">
+                <p
+                  class="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start"
+                >
+                  Already have an account?
+                  <a
+                    href="LogIn.html"
+                    class="text-blue-500 hover:text-blue-700 dark:text-brand-400"
+                    >Sign In</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative bg-blue-950 pb-44 items-center hidden w-full h-[800px]  bg-brand-950 dark:bg-white/5 lg:grid lg:w-1/2"
+        >
+        
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center text-white justify-between gap-3">
+        
+        <svg width="44" height="44" viewBox="0 0 24 24" class="text-brand-600 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+          <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
+        </svg>
+
+        
+        <div class="flex-1 items-center">
+          <h1 class="text-lg sm:text-xl md:text-5xl text-white font-bold ">Medimate</h1>
+
+        </div>
+          </div>
+        </div>
+        <!-- Toggler -->
+       
+      </div>
     </div>
-
-    <!-- Success/Error Message -->
-    <!-- <div class="mb-4 p-3 rounded-lg text-center font-medium bg-green-100 text-green-700">
-      Sign up successful! You can now login.
-    </div> -->
-
-    <!-- Sign Up Form -->
-    <form class="space-y-3">
-
-      <!-- First & Last Name -->
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <label class="block text-0.5xl font-semibold text-gray-700 mb-2">First Name</label>
-          <input type="text" placeholder="First Name"
-            class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
-            required>
-        </div>
-
-        <div>
-          <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Last Name</label>
-          <input type="text" placeholder="Last Name"
-            class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
-            required>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Email</label>
-        <input type="email" placeholder="Enter Email"
-          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
-          required>
-      </div>
-
-      <!-- Password -->
-      <div>
-        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Password</label>
-        <input type="password" placeholder="Enter Password"
-          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
-          required>
-      </div></div>
-      
-
-      <!-- Country -->
-       <div class="grid grid-cols-2 gap-4">
-        <div>
-        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Country</label>
-        <input type="text" placeholder="Enter Country"
-          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
-          required>
-      </div>
-
-      <!-- Occupation -->
-      <div>
-        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Occupation</label>
-        <input type="text" placeholder="Enter Occupation"
-          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
-          required>
-      </div>
-</div>
-    
-
-      <!-- Button -->
-       <div class="flex justify-center">  <button type="submit"
-        class="w-full  bg-blue-900 hover:bg-blue-700 text-white font-semibold py-3 rounded-md shadow-lg transition duration-200">
-        Sign Up
-      </button></div>
-      
-    </form>
-
-    <!-- Already have an account -->
-    <p class="text-center text-gray-600 text-sm mb-2 mt-6">
-      Already have an account?
-      <a href="LogIn.html" class="text-blue-900 hover:underline font-semibold">Log In</a>
-    </p>
-  </div>
-
-</body>
+    <!-- ===== Page Wrapper End ===== -->
+  </body>
 </html>
