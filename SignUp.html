@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1 {
+      font-weight: 300; /* Bold */
+    }
+    p {
+      font-weight: 200; /* Light */
+    }
+  </style>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 p-6">
 
-  <div class="w-full max-w-3xl bg-white rounded-2xl shadow-2xl p-8">
+  <div class="w-[500px] h-[480px] max-w-2xl bg-white rounded-2xl shadow-2xl py-4 px-6">
     
     <!-- Heading -->
-    <div class="text-center mb-8">
-      <h3 class="text-4xl font-bold text-gray-800 mb-2">Welcome To Medimate</h3>
+    <div class="text-center mb-4">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">Welcome To Medimate</h3>
       <p class="text-gray-600 text-sm">
         Just tell us a few things about yourself and we'll take care of the rest.
       </p>
@@ -24,66 +36,71 @@
     </div> -->
 
     <!-- Sign Up Form -->
-    <form class="space-y-5">
+    <form class="space-y-3">
 
       <!-- First & Last Name -->
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label class="block text-xl font-semibold text-gray-700 mb-2">First Name</label>
+          <label class="block text-0.5xl font-semibold text-gray-700 mb-2">First Name</label>
           <input type="text" placeholder="First Name"
-            class="w-full pl-3 pr-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
+            class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
             required>
         </div>
 
         <div>
-          <label class="block text-xl font-semibold text-gray-700 mb-2">Last Name</label>
+          <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Last Name</label>
           <input type="text" placeholder="Last Name"
-            class="w-full pl-3 pr-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
+            class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
             required>
         </div>
       </div>
 
-      <!-- Email -->
-      <div>
-        <label class="block text-xl font-semibold text-gray-700 mb-2">Email</label>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Email</label>
         <input type="email" placeholder="Enter Email"
-          class="w-full pl-3 pr-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
+          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
           required>
       </div>
 
       <!-- Password -->
       <div>
-        <label class="block text-xl font-semibold text-gray-700 mb-2">Password</label>
+        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Password</label>
         <input type="password" placeholder="Enter Password"
-          class="w-full pl-3 pr-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
+          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
           required>
-      </div>
+      </div></div>
+      
 
       <!-- Country -->
-      <div>
-        <label class="block text-xl font-semibold text-gray-700 mb-2">Country</label>
+       <div class="grid grid-cols-2 gap-4">
+        <div>
+        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Country</label>
         <input type="text" placeholder="Enter Country"
-          class="w-full pl-3 pr-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
+          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
           required>
       </div>
 
       <!-- Occupation -->
       <div>
-        <label class="block text-xl font-semibold text-gray-700 mb-2">Occupation</label>
+        <label class="block text-0.5xl font-semibold text-gray-700 mb-2">Occupation</label>
         <input type="text" placeholder="Enter Occupation"
-          class="w-full pl-3 pr-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
+          class="w-full pl-2 pr-3 py-1 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-pink-500"
           required>
       </div>
+</div>
+    
 
       <!-- Button -->
-      <button type="submit"
-        class="w-full bg-blue-900 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition duration-200">
+       <div class="flex justify-center">  <button type="submit"
+        class="w-full  bg-blue-900 hover:bg-blue-700 text-white font-semibold py-3 rounded-md shadow-lg transition duration-200">
         Sign Up
-      </button>
+      </button></div>
+      
     </form>
 
     <!-- Already have an account -->
-    <p class="text-center text-gray-600 text-xl mt-6">
+    <p class="text-center text-gray-600 text-sm mb-2 mt-6">
       Already have an account?
       <a href="LogIn.html" class="text-blue-900 hover:underline font-semibold">Log In</a>
     </p>

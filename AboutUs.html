@@ -4,244 +4,150 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              brand: {
+                50:  '#eefaff',
+                100: '#d6f0ff',
+                200: '#b0e3ff',
+                300: '#7fd1ff',
+                400: '#48bbff',
+                500: '#189bff',
+                600: '#0f79db',
+                700: '#0a5cb0',
+                800: '#074885',
+                900: '#053864'
+              }
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body class="flex flex-col justify-around items-center ">
 
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col">
 
-     <div class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center px-6 py-2 border-b border-gray-300 bg-blue-600 transition-colors duration-300">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+        
+        <!-- Logo -->
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-brand-600 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+          <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
+        </svg>
 
-    <!-- Logo -->
-    <div class="flex items-center gap-3">
-      <h2 class="text-3xl text-white font-bold">Md Calc</h2>
-    </div>
+        <div class="flex-1 items-center">
+          <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
+        </div>
 
-    <!-- Buttons -->
-    <div class="flex items-center gap-2 ml-4">
-      <button class="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600 text-lg transition-colors">
-        Subscription
-      </button>
+        <!-- Navigation -->
+        <nav class="flex mx-72 justify-between items-center"> 
+          <a href="medimate_dashboard.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">Home</a>
+          <a href="AboutUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">About us</a>
+          <a href="ContactUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">Contact us</a>
+        </nav>
 
-      <a href="Help.html" class="px-3 py-1 text-lg bg-gray-50 text-black rounded hover:bg-gray-400 transition-colors">
-        Help
-      </a>
-
-      <a href="SignUp.html" class="px-3 py-1 text-lg bg-gray-100 text-gray-900 rounded hover:bg-gray-400 transition-colors">
-        Log Out
-      </a>
-    </div>
-  </div>
-    <!-- Navbar -->
-    <div
-      class="border-b fixed left-0 top-12 z-50 bg-white border-gray-300 shadow-md dark:border-gray-700 w-full"
-    >
-      <ul
-        class="flex text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 max-w-screen"
-      >
-        <li class="me-2">
-          <a
-            href="index.html"
-            class="inline-flex items-center gap-2 p-3 md:p-4 text-gray-500 hover:text-gray-700 rounded-t-lg whitespace-nowrap"
-            >Home</a
-          >
-        </li>
-        <li class="me-2">
-          <a
-            href="About.html"
-            class="inline-flex items-center gap-2 p-3 md:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-300 whitespace-nowrap"
-            >About</a
-          >
-        </li>
-        <li>
-          <a
-            href="Calculator.html"
-            class="inline-flex items-center gap-2 p-3 md:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-300 whitespace-nowrap"
-            >All Calculators</a
-          >
-        </li>
-      </ul>
-    </div>
+        <!-- Right side -->
+        <div> 
+          <button id="themeToggle" class="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-700 px-3 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" aria-pressed="false">
+            <span class="hidden sm:inline">Dark mode</span>
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+        </div>
+      </div>
+    </header>
 
     <!-- About Section -->
-    <section
-      class="w-full h-[500px] py-36 px-6 flex flex-col items-center text-center"
-    >
-      <!-- Heading -->
-      <div class="text-6xl font-bold mb-4">
+    <section class="w-[1400px] py-10 px-6 flex flex-col items-center text-center">
+      <div class="text-4xl font-bold mb-4">
         About
-        <span
-          class="bg-gradient-to-r from-blue-500 via-indigo-600 to-red-500 bg-clip-text text-transparent"
-          >MdCalc</span
-        >
+        <span class="bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-900 bg-clip-text text-transparent">Medimate</span>
       </div>
-
-      <!-- Paragraph -->
-      <p class="max-w-4xl text-xl text-gray-600 leading-relaxed mt-4 mb-8">
-        MdCalc is driven by a vision to make healthcare simpler, smarter, and more accessible for everyone.
-We focus on reducing the challenges doctors and clinics face in managing patients.
-Our solutions are designed to streamline workflows and save valuable time.
-By enhancing efficiency, we allow healthcare providers to focus more on patient care.
-Accessibility is at the core of what we do, ensuring no one is left behind.
-We combine innovation with reliability to deliver trusted healthcare tools.
-From doctors to clinics, our mission is to empower the entire medical community.
-Together, we aim to build a future where healthcare is seamless and effective.
-With Medituri, better healthcare is not just a goal — it’s a promise.
+      <p class="max-w-5xl text-0.5xl text-gray-600 dark:text-gray-300 leading-relaxed mt-2 mb-8">
+        Medimate is driven by a vision to make healthcare simpler, smarter, and more accessible for everyone.
+        We focus on reducing the challenges doctors and clinics face in managing patients.
+        Our solutions are designed to streamline workflows and save valuable time.
+        By enhancing efficiency, we allow healthcare providers to focus more on patient care.
+        Accessibility is at the core of what we do, ensuring no one is left behind.
+        We combine innovation with reliability to deliver trusted healthcare tools.
+        From doctors to clinics, our mission is to empower the entire medical community.
+        Together, we aim to build a future where healthcare is seamless and effective.
+        With Medimate, better healthcare is not just a goal — it’s a promise.
       </p>
-
-      <!-- Button -->
-      <button
-        class="bg-blue-600 hover:bg-yellow-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg transition"
-      >
+      <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg shadow-lg transition">
         Get Started
       </button>
     </section>
 
-    <!-- Choose Section Placeholder -->
-    <section class="w-full mt-12 py-16 text-center px-6">
+    <!-- Choose Section -->
+    <section class="w-[1400px] mt-4 py-4 text-center px-48">
       <div class="mx-auto">
-    <!-- Heading -->
-    <h2 class="text-6xl md:text-5xl font-bold text-center mb-12">
-      Why Choose
-      <span class="bg-gradient-to-r from-blue-500 via-indigo-600 to-red-500 bg-clip-text text-transparent">
-        MdCalc
-      </span>
-    </h2>
-
-    <!-- Flexbox container -->
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      <!-- Left Side - Image -->
-      <div class="flex-1 flex justify-center">
-        <img
-          src="About.jpg"
-          alt="Why Choose Medituri"
-          class=" w-[800px]  h-96 rounded-lg"
-        />
-      </div>
-
-      <!-- Right Side - Features -->
-      <div class="flex-1 space-y-8">
-        <!-- Feature 1 -->
-        <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Accuracy</h3>
-          <p class="text-gray-600">
-            We ensure all information is verified by experts and regularly updated.
-          </p>
-        </div>
-
-        <!-- Feature 2 -->
-        <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Usability</h3>
-          <p class="text-gray-600">
-            Our platform is designed to be user-friendly and accessible to all healthcare professionals.
-          </p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Support</h3>
-          <p class="text-gray-600">
-            We offer excellent customer support to assist you with any questions or issues.
-          </p>
+        <h2 class="text-4xl  font-bold text-center mb-12">
+          Why Choose
+          <span class="bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-900 bg-clip-text text-transparent">Medimate</span>
+        </h2>
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <div class="flex-1 flex justify-center">
+            <img src="About.jpg" alt="Why Choose Medituri" class="w-[800px] h-96 rounded-lg" />
+          </div>
+          <div class="flex-1 space-y-8">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Accuracy</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">We ensure all information is verified by our experts and regularly updated.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Usability</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Our platform is designed to be user-friendly to all healthcare professionals.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Support</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">We offer excellent customer support to assist you with questions or issues.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
     </section>
 
+ 
     <!-- Footer -->
-    <footer class="bg-white mt-10 text-black">
-  <!-- Top Section -->
-  <div class="bg-blue-600 text-white pt-12 pb-8 px-6">
-    <div class="max-w-full mx-auto">
-      <!-- Headline + Links -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Left Side Heading -->
-        <div class="flex items-center justify-center lg:justify-start">
-          <h4 class="text-xl sm:text-3xl md:text-xl  leading-snug text-center lg:text-left">
-           Results are for informational purposes and require verification.
-            They should never be used alone or as a substitute for clinical decision-making.
-             View our disclaimer for details.
-          </h4>
-        </div>
-
-        <!-- Right Side Links -->
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
-          <!-- Tools -->
-          <div>
-            <h5 class="text-lg sm:text-xl font-bold mb-4 hover:text-gray-300">
-              Tools
-            </h5>
-            <ul class="space-y-2 font-medium">
-              <li>All Calculators</li>
-              <li>Newest</li>
-              <li>Favourites</li>
-              <li>Specialty</li>
-              <li>Guidelines</li>
-              <li>MdCalc EHR</li>
-            </ul>
-          </div>
-
-          <!-- Education -->
-          <div>
-            <h5 class="text-lg sm:text-xl font-bold mb-4 hover:text-gray-300">
-              Education
-            </h5>
-            <ul class="space-y-2 font-medium">
-              <li>CME</li>
-              <li>Stroke CME</li>
-              <li>Physician Guide</li>
-              <li>EBM Guide</li>
-              <li>EMRA Guide</li>
-              <li>Ped EMRA Guide</li>
-            </ul>
-          </div>
-
-          <!-- About -->
-          <div>
-            <h5 class="text-lg sm:text-xl font-bold mb-4 hover:text-gray-300">
-              About
-            </h5>
-            <ul class="space-y-2 font-medium">
-              <li>About MdCalc</li>
-              <li>MdCalc on Race</li>
-              <li>FAQs</li>
-              <li>For Partners</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
-
-          <!-- Team -->
-          <div>
-            <h5 class="text-lg sm:text-xl font-bold mb-4 hover:text-gray-300">
-              Team
-            </h5>
-            <ul class="space-y-2 font-medium">
-              <li>Join Us</li>
-              <li>Community</li>
-              <li>Careers</li>
-              <li>Contributors</li>
-            </ul>
-          </div>
+    <footer class="border-t border-gray-200/70 dark:border-gray-800 py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+        <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI components • WCAG AA</p>
+        <div class="flex gap-4">
+          <a class="hover:underline" href="#" aria-label="Privacy">Privacy</a>
+          <a class="hover:underline" href="#" aria-label="Terms">Terms</a>
         </div>
       </div>
-    </div>
-  </div>
+    </footer>
 
-  <!-- Bottom Bar -->
-  <div class="text-center mb-2 text-xs sm:text-sm font-light md:text-base pt-3 border-t text-gray-600 border-gray-400">
-    <p class="px-2">
-      <a
-        href="https://mdcalc.com"
-        class="hover:text-gray-800 font-light transition"
-      >
-        MdCalc
-      </a>
-      © 2025 All rights reserved | Terms of Use | Privacy Policy |
-      Cookie Policy | Cookie Preferences
-    </p>
-    
-    </div>
-  </div>
-</footer>
+    <script>
+      // Year auto update
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Dark mode toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const html = document.documentElement;
+      themeToggle.addEventListener("click", () => {
+        html.classList.toggle("dark");
+      });
+    </script>
+
   </body>
 </html>

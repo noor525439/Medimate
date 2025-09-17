@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50:  '#eefaff',
+              100: '#d6f0ff',
+              200: '#b0e3ff',
+              300: '#7fd1ff',
+              400: '#48bbff',
+              500: '#189bff',
+              600: '#0f79db',
+              700: '#0a5cb0',
+              800: '#074885',
+              900: '#053864'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+      <!-- Logo -->
+      <svg width="28" height="28" viewBox="0 0 24 24" class="text-brand-600 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+        <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
+      </svg>
+
+      <div class="flex-1 items-center">
+        <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex mx-72 justify-between items-center"> 
+        <a href="medimate_dashboard.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">Home</a>
+        <a href="AboutUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">About us</a>
+        <a href="ContactUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">Contact us</a>
+      </nav>
+
+      <!-- Right side -->
+      <div> 
+        <button id="themeToggle" class="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-700 px-3 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">
+          <span class="hidden sm:inline">Dark mode</span>
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-10">
+    <div class="container mx-auto px-8 md:px-16 lg:px-24">
+      <h2 class="text-3xl font-bold text-center mb-12">Contact Me</h2>
+
+      <div class="flex flex-col md:flex-row items-center md:space-x-12">
+        <!-- Left Side -->
+        <div class="flex-1">
+          <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-900 mb-4">Let's Talk</h3>
+          <p>I'm open to discussing about medical calculators.</p>
+          <div class="mb-4 mt-8">
+            <a href="mailto:noor525439@gmail.com" class="hover:underline">12345678@gmail.com</a>
+          </div>
+          <div class="mb-4"><span>822832989832</span></div>
+          <div class="mb-4"><span>city., Province...</span></div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="flex-1 w-full">
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block mb-2">Your Name</label>
+              <input id="name" type="text" placeholder="Enter Your Name"
+                class="w-full p-2 rounded bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-green-400"/>
+            </div>
+            <div>
+              <label for="email" class="block mb-2">Email</label>
+              <input id="email" type="email" placeholder="Enter Your Email"
+                class="w-full p-2 rounded bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-green-400"/>
+            </div>
+            <div>
+              <label for="message" class="block mb-2">Message</label>
+              <textarea id="message" rows="5" placeholder="Enter Your Message"
+                class="w-full p-2 rounded bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-green-400"></textarea>
+            </div>
+            <button type="submit"
+              class="bg-gradient-to-r from-blue-400 to-blue-900 text-white transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full">
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200/70 dark:border-gray-800 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+      <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI components • WCAG AA</p>
+      <div class="flex gap-4">
+        <a class="hover:underline" href="#">Privacy</a>
+        <a class="hover:underline" href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Dark mode toggle
+    const themeToggle = document.getElementById("themeToggle");
+    const html = document.documentElement;
+
+    themeToggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+    });
+  </script>
+
+</body>
+</html>

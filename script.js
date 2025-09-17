@@ -17,7 +17,7 @@ const tools = [
       { id: 'depression', name: 'Depression', tags: ['<i class="fa-regular fa-star"></i>'], desc: 'PHQ‑2 / PHQ‑9 with alerts', actions: ['Start PHQ‑9','New note'] },
       { id: 'bipolar', name: 'Bipolar', tags: ['<i class="fa-regular fa-star"></i>'], desc: 'MDQ, mood chart', actions: ['Start MDQ','New entry'] },
       { id: 'seizure', name: 'Seizure Log', tags: ['<i class="fa-regular fa-star"></i>'], desc: 'Aura, duration, triggers, post‑ictal', actions: ['New entry','Export'] },
-      { id: 'pulseox', name: 'Pulse Ox', tags: ['vitals','resp','log'], desc: 'SpO₂ spot checks & trends', actions: ['New entry','View trends'] },
+      { id: 'pulseox', name: 'Pulse Ox', tags: ['<i class="fa-regular fa-star"></i>'], desc: 'SpO₂ spot checks & trends', actions: ['New entry','View trends'] },
       { id: 'hearing', name: 'Hearing Check', tags: ['<i class="fa-regular fa-star"></i>'], desc: 'HHIE‑S quick screen', actions: ['Start screen'] },
       { id: 'vision', name: 'Vision Screening', tags: ['<i class="fa-regular fa-star"></i>'], desc: 'Snellen near/distance (self‑admin)', actions: ['Start screen'] },
     ];
