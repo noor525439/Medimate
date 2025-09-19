@@ -15,7 +15,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* ✅ scrollbar remove */
+      font-family: 'Poppins', sans-serif;
+    }
     :focus-visible { outline: 2px solid #189bff; outline-offset: 2px; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -26,20 +31,17 @@
     }
   </style>
 </head>
-<body class="text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col overflow-x-hidden">
+<body class="text-gray-900 flex flex-col overflow-x-hidden h-full">
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/70 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+  <header class="sticky top-0 z-50 bg-white/70 border-b border-gray-200 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       
       <!-- Logo -->
       <div class="flex items-center gap-2">
-
-         <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 " aria-hidden="true" fill="currentColor">
           <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
         </svg>
-
-        
         <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
       </div>
 
@@ -52,18 +54,18 @@
 
       <!-- Right side -->
       <div>
-        <a href="SignUp.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg shadow">
+        <a href="SignUp.html" class="p-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-sm shadow">
           Log Out
         </a>
       </div>
     </div>
   </header>
-<h1 class="font-medium text-3xl text-center my-4">Calculator</h1>
-  <!-- Main Content -->
-  <main class="flex flex-col lg:flex-row max-w-7xl   mx-auto w-full px-4 py-8 gap-6">
 
-  
-    <div class="lg:w-1/2 border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+  <!-- Main Content -->
+  <main class="flex flex-col mt-10 lg:flex-row max-w-7xl mx-auto w-full h-full">
+
+    <!-- Left Panel -->
+    <div class="lg:w-1/2 border border-gray-200 rounded-sm shadow-sm overflow-hidden flex flex-col">
       <!-- Sidebar Header -->
       <div class="bg-blue-600 text-white px-4 py-3 font-semibold flex gap-6">
         <button onclick="scrollToSection('Calculator')" class="hover:underline">Calculator</button>
@@ -71,8 +73,8 @@
         <button onclick="scrollToSection('Description')" class="hover:underline">Description</button>
       </div>
 
-      <!-- Scrollable Content -->
-      <aside id="scrollArea" class="px-4 py-6 h-[300px] overflow-y-auto scroll-smooth">
+      <!-- ✅ Full height, no scrollbar -->
+      <aside id="scrollArea" class="px-4 py-6 overflow-hidden">
         <section id="Calculator">
           <h2 class="text-lg font-bold text-gray-800 mb-1">A-a Gradient</h2>
           <p class="text-sm text-gray-600 mb-4">Used to determine cause of hypoxemia</p>
@@ -98,12 +100,11 @@
       </aside>
     </div>
 
-    <!-- Right Panel (50%) -->
-    <section class="lg:w-1/2 border border-gray-200 rounded-lg shadow-sm p-6">
+    <!-- Right Panel -->
+    <section class="lg:w-1/2 border border-gray-200 rounded-sm shadow-sm p-6 flex flex-col h-full">
 
       <!-- Question Card -->
-      <div id="questionCard">
-
+      <div id="questionCard" class=" flex flex-col">
         <!-- ✅ Progress Bar -->
         <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
           <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
@@ -113,28 +114,25 @@
         <div id="stepContent" class="mb-6"></div>
 
         <!-- Navigation Buttons -->
-        <div class="flex justify-between gap-3">
+        <div class="flex justify-between gap-3 mt-auto">
           <button id="backBtn" onclick="prevStep()" 
-            class="flex-1 px-4 py-3 bg-gray-200 dark:bg-gray-700 rounded-md 
-                   text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hidden">
+            class="flex-1 p-2 bg-gray-200 rounded-sm text-gray-700 hover:bg-gray-300 hidden">
             ← Back
           </button>
 
           <button id="nextBtn" onclick="nextStep()" 
-            class="flex-1 px-4 py-3 bg-blue-600 text-white font-medium 
-                   rounded-md hover:bg-blue-700 transition">
+            class="flex-1 p-2 bg-blue-600 text-white font-medium rounded-sm hover:bg-blue-700 transition">
             Next →
           </button>
         </div>
-
       </div>
 
       <!-- Result Card -->
       <div id="resultCard" class="hidden mt-6">
-        <div class="p-6 rounded-2xl bg-white/80 dark:bg-gray-800/70 shadow-xl backdrop-blur-md border border-gray-200 dark:border-gray-700 animate-fadeIn">
+        <div class="p-6 rounded-sm bg-white/80 shadow-xl backdrop-blur-md border border-gray-200 animate-fadeIn">
           
           <!-- Title -->
-          <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-gray-100">
+          <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">
             Your Health Report
           </h2>
 
@@ -145,7 +143,7 @@
           <div id="statusBox" class="text-center text-lg font-medium"></div>
 
           <!-- Breakdown -->
-          <div class="mt-5 space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+          <div class="mt-5 space-y-2 text-gray-700 text-sm">
             <p><i class="fa-solid fa-user text-blue-600"></i> Age: <span id="ageResult"></span></p>
             <p><i class="fa-solid fa-heart-pulse text-red-500"></i> Heart Rate: <span id="hrResult"></span></p>
             <p><i class="fa-solid fa-lungs text-teal-500"></i> PaO₂: <span id="pao2Result"></span></p>
@@ -155,25 +153,18 @@
           <!-- Restart Button -->
           <div class="mt-6 text-center">
             <button onclick="restartQuiz()" 
-              class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow">
-            Restart
+              class="px-6 py-2 rounded-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow">
+              Restart
             </button>
           </div>
         </div>
       </div>
-
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-200 dark:border-gray-800 py-6 mt-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
-      <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI • WCAG AA</p>
-      <div class="flex gap-4">
-        <a class="hover:underline" href="#">Privacy</a>
-        <a class="hover:underline" href="#">Terms</a>
-      </div>
-    </div>
+  <footer class="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
+    © <span id="year"></span> MedHub Clinics • HIPAA-ready UI • WCAG AA
   </footer>
 
   <!-- JS -->
@@ -191,7 +182,6 @@
       }
     }
 
-    // Steps Data
     const steps = [
       { id: "age", label: "1. Age?", placeholder: "Enter age", unit: "Years" },
       { id: "hr", label: "2. Heart Rate?", placeholder: "Enter HR", unit: "BPM" },
@@ -221,7 +211,7 @@
             id="${stepData.id}"
             value="${value}"
             placeholder="${stepData.placeholder}"
-            class="w-full border border-gray-300 rounded-md px-3 py-2 
+            class="w-full border border-gray-300 rounded-sm px-3 py-2 
                    focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <span class="text-gray-600">${stepData.unit}</span>
@@ -230,8 +220,6 @@
 
       document.getElementById("backBtn").classList.toggle("hidden", step === 0);
       document.getElementById("nextBtn").textContent = step === steps.length - 1 ? "Show Result" : "Next →";
-
-      // ✅ Update progress bar
       updateProgressBar();
     }
 
@@ -297,7 +285,6 @@
       showStep(currentStep);
     }
 
-    // Init
     showStep(currentStep);
   </script>
 </body>
