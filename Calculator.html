@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    :focus-visible { outline: 2px solid #189bff; outline-offset: 2px; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/70 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+
+         <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+          <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
+        </svg>
+
+        
+        <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-sm font-medium hover:text-blue-600">Home</a>
+        <a href="AboutUs.html" class="text-sm font-medium hover:text-blue-600">About</a>
+        <a href="ContactUs.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Right side -->
+      <div>
+        <a href="SignUp.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg shadow">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </header>
+<h1 class="font-medium text-3xl text-center my-4">Calculator</h1>
+  <!-- Main Content -->
+  <main class="flex flex-col lg:flex-row max-w-7xl   mx-auto w-full px-4 py-8 gap-6">
+
+  
+    <div class="lg:w-1/2 border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+      <!-- Sidebar Header -->
+      <div class="bg-blue-600 text-white px-4 py-3 font-semibold flex gap-6">
+        <button onclick="scrollToSection('Calculator')" class="hover:underline">Calculator</button>
+        <button onclick="scrollToSection('About')" class="hover:underline">About</button>
+        <button onclick="scrollToSection('Description')" class="hover:underline">Description</button>
+      </div>
+
+      <!-- Scrollable Content -->
+      <aside id="scrollArea" class="px-4 py-6 h-[300px] overflow-y-auto scroll-smooth">
+        <section id="Calculator">
+          <h2 class="text-lg font-bold text-gray-800 mb-1">A-a Gradient</h2>
+          <p class="text-sm text-gray-600 mb-4">Used to determine cause of hypoxemia</p>
+          <ol class="space-y-3 text-gray-700 font-medium list-decimal list-inside">
+            <li>Age?</li>
+            <li>Heart Rate?</li>
+            <li>PaO₂?</li>
+            <li>PaCO₂?</li>
+          </ol>
+        </section>
+
+        <section id="About" class="mt-8">
+          <h2 class="text-lg font-bold text-gray-800 mb-1">About</h2>
+          <p class="text-sm text-gray-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+          </p>
+        </section>
+
+        <section id="Description" class="mt-8">
+          <h2 class="text-lg font-bold text-gray-800 mb-1">Description</h2>
+          <p class="text-sm text-gray-600">Description...</p>
+        </section>
+      </aside>
+    </div>
+
+    <!-- Right Panel (50%) -->
+    <section class="lg:w-1/2 border border-gray-200 rounded-lg shadow-sm p-6">
+
+      <!-- Question Card -->
+      <div id="questionCard">
+
+        <!-- ✅ Progress Bar -->
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+          <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
+        </div>
+
+        <!-- Step Content -->
+        <div id="stepContent" class="mb-6"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between gap-3">
+          <button id="backBtn" onclick="prevStep()" 
+            class="flex-1 px-4 py-3 bg-gray-200 dark:bg-gray-700 rounded-md 
+                   text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hidden">
+            ← Back
+          </button>
+
+          <button id="nextBtn" onclick="nextStep()" 
+            class="flex-1 px-4 py-3 bg-blue-600 text-white font-medium 
+                   rounded-md hover:bg-blue-700 transition">
+            Next →
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Result Card -->
+      <div id="resultCard" class="hidden mt-6">
+        <div class="p-6 rounded-2xl bg-white/80 dark:bg-gray-800/70 shadow-xl backdrop-blur-md border border-gray-200 dark:border-gray-700 animate-fadeIn">
+          
+          <!-- Title -->
+          <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-gray-100">
+            Your Health Report
+          </h2>
+
+          <!-- Score -->
+          <div id="scoreBox" class="text-center text-4xl font-extrabold mb-3"></div>
+
+          <!-- Status -->
+          <div id="statusBox" class="text-center text-lg font-medium"></div>
+
+          <!-- Breakdown -->
+          <div class="mt-5 space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+            <p><i class="fa-solid fa-user text-blue-600"></i> Age: <span id="ageResult"></span></p>
+            <p><i class="fa-solid fa-heart-pulse text-red-500"></i> Heart Rate: <span id="hrResult"></span></p>
+            <p><i class="fa-solid fa-lungs text-teal-500"></i> PaO₂: <span id="pao2Result"></span></p>
+            <p><i class="fa-solid fa-wind text-indigo-500"></i> PaCO₂: <span id="paco2Result"></span></p>
+          </div>
+
+          <!-- Restart Button -->
+          <div class="mt-6 text-center">
+            <button onclick="restartQuiz()" 
+              class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow">
+            Restart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+      <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI • WCAG AA</p>
+      <div class="flex gap-4">
+        <a class="hover:underline" href="#">Privacy</a>
+        <a class="hover:underline" href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function scrollToSection(id) {
+      const container = document.getElementById("scrollArea");
+      const section = document.getElementById(id);
+      if (container && section) {
+        container.scrollTo({
+          top: section.offsetTop - container.offsetTop,
+          behavior: "smooth"
+        });
+      }
+    }
+
+    // Steps Data
+    const steps = [
+      { id: "age", label: "1. Age?", placeholder: "Enter age", unit: "Years" },
+      { id: "hr", label: "2. Heart Rate?", placeholder: "Enter HR", unit: "BPM" },
+      { id: "pao2", label: "3. PaO₂?", placeholder: "Enter PaO₂", unit: "mmHg" },
+      { id: "paco2", label: "4. PaCO₂?", placeholder: "Enter PaCO₂", unit: "mmHg" },
+    ];
+
+    let currentStep = 0;
+    let formData = {};
+
+    function updateProgressBar() {
+      const progress = ((currentStep + 1) / steps.length) * 100;
+      document.getElementById("progressBar").style.width = progress + "%";
+    }
+
+    function showStep(step) {
+      const stepData = steps[step];
+      const value = formData[stepData.id] || "";
+
+      document.getElementById("stepContent").innerHTML = `
+        <label for="${stepData.id}" class="block text-gray-800 text-lg font-semibold mb-2">
+          ${stepData.label}
+        </label>
+        <div class="flex items-center gap-2">
+          <input
+            type="number"
+            id="${stepData.id}"
+            value="${value}"
+            placeholder="${stepData.placeholder}"
+            class="w-full border border-gray-300 rounded-md px-3 py-2 
+                   focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <span class="text-gray-600">${stepData.unit}</span>
+        </div>
+      `;
+
+      document.getElementById("backBtn").classList.toggle("hidden", step === 0);
+      document.getElementById("nextBtn").textContent = step === steps.length - 1 ? "Show Result" : "Next →";
+
+      // ✅ Update progress bar
+      updateProgressBar();
+    }
+
+    function nextStep() {
+      const stepData = steps[currentStep];
+      const value = document.getElementById(stepData.id).value;
+      formData[stepData.id] = value;
+
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        showResult();
+      }
+    }
+
+    function prevStep() {
+      const stepData = steps[currentStep];
+      const value = document.getElementById(stepData.id).value;
+      formData[stepData.id] = value;
+
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    function showResult() {
+      document.getElementById("questionCard").classList.add("hidden");
+      const resultCard = document.getElementById("resultCard");
+      resultCard.classList.remove("hidden");
+
+      const age = parseInt(formData["age"]) || 0;
+      const hr = parseInt(formData["hr"]) || 0;
+      const pao2 = parseInt(formData["pao2"]) || 0;
+      const paco2 = parseInt(formData["paco2"]) || 0;
+
+      let score = 0;
+      if (age < 40) score += 2; else if (age < 60) score += 1;
+      if (hr >= 60 && hr <= 100) score += 2; else score -= 1;
+      if (pao2 > 80) score += 2; else if (pao2 >= 60) score += 1; else score -= 2;
+      if (paco2 >= 35 && paco2 <= 45) score += 2; else score -= 1;
+
+      let status = "";
+      let color = "";
+      if (score >= 6) { status = "✅ Vitals Normal"; color = "text-green-600"; }
+      else if (score >= 3) { status = "⚠️ Borderline – Monitor Closely"; color = "text-yellow-600"; }
+      else { status = "❌ Abnormal – Consult Doctor"; color = "text-red-600"; }
+
+      document.getElementById("scoreBox").innerHTML = `<span class="${color}">${score} Points</span>`;
+      document.getElementById("statusBox").innerHTML = `<span class="${color}">${status}</span>`;
+      document.getElementById("ageResult").textContent = age;
+      document.getElementById("hrResult").textContent = hr;
+      document.getElementById("pao2Result").textContent = pao2;
+      document.getElementById("paco2Result").textContent = paco2;
+    }
+
+    function restartQuiz() {
+      document.getElementById("resultCard").classList.add("hidden");
+      document.getElementById("questionCard").classList.remove("hidden");
+      currentStep = 0;
+      formData = {};
+      showStep(currentStep);
+    }
+
+    // Init
+    showStep(currentStep);
+  </script>
+</body>
+</html>

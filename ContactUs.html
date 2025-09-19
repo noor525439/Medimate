@@ -1,145 +1,264 @@
-<!DOCTYPE html>
-<html lang="en" class="light">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-
-  <!-- Tailwind -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-bx2yLQ8DK+g+Qs8z5Q8m87XXj3Hj0c6fKx7Frw3FbikTDX0sd6mW4BoYTu8o6d8N17E3vdlzA3M2vYykF+5pZw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Tailwind Play CDN (no build step needed) -->
+   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: {
-            brand: {
-              50:  '#eefaff',
-              100: '#d6f0ff',
-              200: '#b0e3ff',
-              300: '#7fd1ff',
-              400: '#48bbff',
-              500: '#189bff',
-              600: '#0f79db',
-              700: '#0a5cb0',
-              800: '#074885',
-              900: '#053864'
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+        
+            colors: {
+              brand: {
+                50:  '#eefaff',
+                100: '#d6f0ff',
+                200: '#b0e3ff',
+                300: '#7fd1ff',
+                400: '#48bbff',
+                500: '#189bff',
+                600: '#0f79db',
+                700: '#0a5cb0',
+                800: '#074885',
+                900: '#053864'
+              }
             }
           }
         }
       }
+    </script>
+  <style>
+    /* Small custom styles for the demo */
+    .glass {
+      background: rgba(255,255,255,0.06);
+    
     }
-  </script>
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+<body class="min-h-screen  text-gray-900 ">
+   <header class="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+        
+        <!-- Logo -->
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+          <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
+        </svg>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
-      <!-- Logo -->
-      <svg width="28" height="28" viewBox="0 0 24 24" class="text-brand-600 dark:text-brand-400" aria-hidden="true" fill="currentColor">
-        <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
-      </svg>
+        <div class="flex-1 items-center">
+          <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
+        </div>
 
-      <div class="flex-1 items-center">
-        <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
+        <!-- Navigation -->
+        <nav class="hidden md:flex justify-between items-center px-[365px] gap-5"> 
+          <a href="index.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">Home</a>
+          <a href="AboutUs.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">About us</a>
+          <a href="" class="text-sm font-semibold text-gray-700 dark:text-gray-900">Contact us</a>
+        </nav>
+
+        <!-- Right side -->
+        <div class="flex items-center gap-2"> 
+          
+          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+        </div>
       </div>
+    </header>
 
-      <!-- Navigation -->
-      <nav class="flex mx-72 justify-between items-center"> 
-        <a href="index.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">Home</a>
-        <a href="AboutUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">About us</a>
-        <a href="#" class="text-sm font-semibold text-gray-700 dark:text-gray-200 mx-4">Contact us</a>
-      </nav>
-
-      <!-- Right side -->
-      <div> 
-        <button id="themeToggle" class="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-700 px-3 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">
-          <span class="hidden sm:inline">Dark mode</span>
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+  <main class=" max-w-6xl mx-auto p-6 md:p-12">
+    <header class="mb-8 flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Get in touch</h1>
+        <p class="mt-1 text-gray-900 max-w-xl">We'd love to hear from you — questions, feedback, partnerships. Drop us a message and we'll reply within 1-2 business days.</p>
       </div>
-    </div>
-  </header>
+      <div class="hidden md:flex items-center gap-3">
+        
+        <div class="text-right">
+          <div class="text-sm text-gray-900">Our Team</div>
+          <div class="font-medium">Support & Partnerships</div>
+        </div>
+      </div>
+    </header>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-10">
-    <div class="container mx-auto px-8 md:px-16 lg:px-24">
-      <h2 class="text-3xl font-bold text-center mb-12">Contact Me</h2>
-
-      <div class="flex flex-col md:flex-row items-center md:space-x-12">
-        <!-- Left Side -->
-        <div class="flex-1">
-          <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-900 mb-4">Let's Talk</h3>
-          <p>I'm open to discussing about medical calculators.</p>
-          <div class="mb-4 mt-8">
-            <a href="mailto:noor525439@gmail.com" class="hover:underline">12345678@gmail.com</a>
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <!-- Contact card / form -->
+      <div class="glass rounded-2xl p-6 md:p-8 shadow-xl border border-white/6">
+        <h2 class="text-xl font-semibold mb-4">Send us a message</h2>
+        <form id="contactForm" class="space-y-4" novalidate>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm text-gray-900">Full name</span>
+              <input name="name" required type="text" placeholder="Your name" class="mt-1 block w-full rounded-lg bg-white/3 border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </label>
+            <label class="block">
+              <span class="text-sm text-gray-900">Email</span>
+              <input name="email" required type="email" placeholder="you@domain.com" class="mt-1 block w-full rounded-lg bg-white/3 border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </label>
           </div>
-          <div class="mb-4"><span>822832989832</span></div>
-          <div class="mb-4"><span>city., Province...</span></div>
-        </div>
 
-        <!-- Right Form -->
-        <div class="flex-1 w-full">
-          <form class="space-y-4">
-            <div>
-              <label for="name" class="block mb-2">Your Name</label>
-              <input id="name" type="text" placeholder="Enter Your Name"
-                class="w-full p-2 rounded bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-green-400"/>
-            </div>
-            <div>
-              <label for="email" class="block mb-2">Email</label>
-              <input id="email" type="email" placeholder="Enter Your Email"
-                class="w-full p-2 rounded bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-green-400"/>
-            </div>
-            <div>
-              <label for="message" class="block mb-2">Message</label>
-              <textarea id="message" rows="5" placeholder="Enter Your Message"
-                class="w-full p-2 rounded bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-green-400"></textarea>
-            </div>
-            <button type="submit"
-              class="bg-gradient-to-r from-blue-400 to-blue-900 text-white transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full">
-              Send
+          <label class="block">
+            <span class="text-sm text-gray-900">Subject</span>
+            <input name="subject" type="text" placeholder="What's this about?" class="mt-1 block w-full rounded-lg bg-white/3 border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </label>
+
+          <label class="block">
+            <span class="text-sm text-gray-900">Message</span>
+            <textarea name="message" required rows="5" placeholder="Write your message..." class="mt-1 block w-full rounded-lg bg-white/3 border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </label>
+
+          <div class="flex items-center justify-between gap-4">
+            <button type="submit" class="inline-flex text-white items-center gap-2 rounded-lg px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10l9-6 9 6-9 6-9-6z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6" />
+              </svg>
+              <span>Send message</span>
             </button>
-          </form>
+
+            <div class="text-sm text-gray-900">
+              <div>Or reach us at</div>
+              <a href="mailto:hello@example.com" class="text-gray-600 hover:underline">hello@example.com</a>
+            </div>
+          </div>
+
+          <div id="formMsg" class="hidden mt-2 rounded-md px-3 py-2 text-sm"></div>
+        </form>
+
+        <div class="mt-6 border-t border-white/6 pt-4 text-sm text-gray-900 flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6" />
+          </svg>
+          <div>
+            <div class="font-medium">Response time</div>
+            <div>Typically 1-2 business days</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-gray-200/70 dark:border-gray-800 py-6">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
-      <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI components • WCAG AA</p>
-      <div class="flex gap-4">
-        <a class="hover:underline" href="#">Privacy</a>
-        <a class="hover:underline" href="#">Terms</a>
+      <!-- Contact info / map -->
+      <aside class="rounded-2xl p-6 md:p-8 bg-white/3 border border-white/6 shadow-lg">
+        <h3 class="text-lg font-semibold mb-4">Contact & location</h3>
+        <div class="space-y-4 text-gray-900">
+          <div class="flex items-start gap-3">
+             <div class="p-2 rounded-md bg-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v-4"/>
+              </svg>
+            </div>
+          
+           
+            
+            <div>
+              
+              
+              <div class="text-sm">Address</div>
+              <div class="font-medium">123 Modern Ave, Suite 100<br/>City, Country</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+             <div class="p-2 rounded-md bg-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v-4"/>
+              </svg>
+            </div>
+        
+            
+              <div class="text-sm ">Phone</div>
+              <div class=" font-medium ">+92 300 1234567</div>
+            </div>
+          
+
+          <div class="flex items-start gap-3">
+            <div class="p-2 rounded-md bg-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v-4"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-sm">Hours</div>
+              <div class="font-medium">Mon–Fri: 9:00 — 18:00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <div class="text-sm text-gray-900 mb-2">Find us here</div>
+          <!-- Placeholder map (static) -->
+          <div class="w-full h-48 rounded-lg overflow-hidden border border-white/6 shadow-inner">
+            <img src="https://images.unsplash.com/photo-1505765053331-0e8fd0a3b8a3?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f3e5b6ad1b4f9c3a2ae4eae7d4e2d4a" alt="map placeholder" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#" class="flex-1 text-center py-2 rounded-lg border border-white/8 text-sm">Get directions</a>
+          <a href="#" class="flex-1 text-center py-2 rounded-lg bg-indigo-600 text-white text-sm">Schedule a call</a>
+        </div>
+      </aside>
+    </section>
+<footer class="border-t border-gray-200/70 dark:border-gray-800 py-6 mt-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+        <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI components • WCAG AA</p>
+        <div class="flex gap-4">
+          <a class="hover:underline" href="#" aria-label="Privacy">Privacy</a>
+          <a class="hover:underline" href="#" aria-label="Terms">Terms</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+
+  
+  </main>
 
   <script>
-    // auto year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // small interactivity: form submit simulation + validation
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Dark mode toggle
-    const themeToggle = document.getElementById("themeToggle");
-    const html = document.documentElement;
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
 
-    themeToggle.addEventListener("click", () => {
-      html.classList.toggle("dark");
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const name = formData.get('name')?.trim();
+      const email = formData.get('email')?.trim();
+      const message = formData.get('message')?.trim();
+
+      if (!name || !email || !message) {
+        formMsg.className = 'mt-2 rounded-md px-3 py-2 text-sm bg-red-600/20 text-red-200 border border-red-500/30';
+        formMsg.textContent = 'Please fill the required fields.';
+        formMsg.classList.remove('hidden');
+        return;
+      }
+
+      // simulate success
+      formMsg.className = 'mt-2 rounded-md px-3 py-2 text-sm bg-green-600/20 text-green-200 border border-green-500/30';
+      formMsg.textContent = 'Thanks — your message has been sent! We will contact you soon.';
+      formMsg.classList.remove('hidden');
+
+      // reset after short delay
+      setTimeout(() => {
+        form.reset();
+      }, 800);
     });
   </script>
-
 </body>
 </html>

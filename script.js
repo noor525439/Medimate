@@ -46,7 +46,7 @@ const tools = [
           <div lass="flex flex-wrap gap-1 self-start">${t.tags}</div>
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
-          <button class="bg-blue-600 text-white dark:bg-gray-950 dark:border-gray-900 border border-gray-300 px-2 py-1 mb-2 rounded-md ">Open it!</button>
+          <a href="Calculator.html" class="bg-blue-600 text-white dark:bg-gray-950 dark:border-gray-900 border border-gray-300 px-2 py-1 mb-2 rounded-md ">Open it!</a>
         </div>
       </article>`;
     }

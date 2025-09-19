@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Medimate </title>
   <meta name="description" content="Medimate dashboard of patient-facing tools: calculators, diaries, logs, screeners and device checks." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,13 +13,16 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 />
-
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
           colors: {
             brand: {
               50:  '#eefaff',
@@ -47,35 +51,33 @@
   <!-- Global wrapper -->
   <div id="app" class="min-h-screen flex flex-col">
     <!-- Top bar -->
-    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white backdrop-blur bg-white-80 dark:bg-gray-900 dark:border-gray-800">
+     <header class="sticky bg-gray-50 bg-gray-50 top-0 z-50 border-b border-gray-200  dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
         
-        <svg width="28" height="28" viewBox="0 0 24 24" class="text-brand-600 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+        <!-- Logo -->
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 dark:text-brand-400" aria-hidden="true" fill="currentColor">
           <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
         </svg>
 
-        
         <div class="flex-1 items-center">
-          <h1 class="text-lg sm:text-xl font-semibold ">Medimate</h1>
-
+          <h1 class="text-lg sm:text-xl font-semibold">Medimate</h1>
         </div>
 
-        <div class="flex mx-72  justify-between items-center"> 
-          <a href="#" class="text-sm text-semibold text-gray-700 dark:text-white mx-4">Home</a>
-          <a href="AboutUs.html" class="text-sm text-semibold text-gray-700 dark:text-white mx-4">About us</a>
-          <a href="ContactUs.html" class="text-sm text-semibold text-gray-700 dark:text-white mx-4">Contact us</a></div>
+        <!-- Navigation -->
+        <nav class="hidden md:flex justify-between items-center px-[365px] gap-5"> 
+          <a href="index.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">Home</a>
+          <a href="AboutUs.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">About us</a>
+          <a href="ContactUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-900">Contact us</a>
+        </nav>
 
-      <div> 
-        <button id="themeToggle" class="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-700 px-3 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" aria-pressed="false">
-          <span class="hidden sm:inline">Dark mode</span>
-         <i class="fa-solid fa-moon"></i>
-
-        </button>
-        <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
-      </div>
-        
+        <!-- Right side -->
+        <div class="flex items-center gap-2"> 
+          
+          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+        </div>
       </div>
     </header>
+    
 
     <!-- Main content -->
     <main class="flex-1">
@@ -99,15 +101,13 @@
 
           <div class="flex flex-wrap items-center gap-2 text-sm">
             <span class="text-gray-500 mr-1">Filters:</span>
-            <button class="chip" data-tag="All">All</button>
-            <button class="chip" data-tag="Favourites">Favourites</button>
-            <button class="chip" data-tag="vitals">Vitals</button>
-            <button class="chip" data-tag="calc">Calculators</button>
-            <button class="chip" data-tag="log">Logs &amp; Diaries</button>
-            <button class="chip" data-tag="resp">Respiratory</button>
-            <button class="chip" data-tag="mental">Mental Health</button>
-            <button class="chip" data-tag="screen">Screeners</button>
-            <button class="chip" data-tag="lifestyle">Lifestyle</button>
+            <button class="chip" data-tag="All"><i class="fa-solid fa-layer-group"></i>  All</button>
+            <button class="chip" data-tag="Favourites"><i class="fa-solid fa-star"></i>  Favourites</button>
+            <button class="chip" data-tag="vitals"><i class="fa-solid fa-water"></i>  Vitals</button>
+            <button class="chip" data-tag="calc"><i class="fa-solid fa-calculator"></i>  Calculators</button>
+            <button class="chip" data-tag="resp"><i class="fa-solid fa-lungs"></i>   Respiratory</button>
+            <button class="chip" data-tag="mental"><i class="fa-solid fa-head-side-virus"></i>  Mental Health</button>
+            <button class="chip" data-tag="lifestyle"><i class="fa-solid fa-apple-whole"></i>  Lifestyle</button>
           </div>
         </div>
 
