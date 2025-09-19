@@ -28,25 +28,25 @@ const tools = [
 
     function createChip(name) {
       const el = document.createElement('span');
-      el.className = 'inline-flex items-center gap-2 rounded-full border border-gray-300/70 dark:border-gray-700 px-2.5 py-1 text-xs';
+      el.className = 'inline-flex items-center gap-2 rounded-full border border-gray-300/70  px-2.5 py-1 text-xs';
       el.textContent = name;
       return el;
     }
 
     function cardTemplate(t) {
-      const tags = t.tags.map(tag => `<span class="text-[10px] tracking-wide uppercase bg-gray-100 dark:bg-gray-800 rounded px-1.5 py-0.5">${tag}</span>`).join(' ');
+      const tags = t.tags.map(tag => `<span class="text-[10px] tracking-wide uppercase bg-gray-100 rounded px-1.5 py-0.5">${tag}</span>`).join(' ');
       const actions = t.actions.map(a => `<button class="action-btn" data-action="${a}" data-target="${t.id}">${a}</button>`).join('');
       return `
-      <article class="group rounded-xl border border-gray-200/80 dark:border-gray-800 bg-white dark:bg-gray-900 p-3 sm:p-4 shadow-sm hover:shadow-md transition">
+      <article class="group rounded-xl border border-gray-200/80  bg-white  p-3 sm:p-4 shadow-sm hover:shadow-md transition">
         <div class="flex items-start justify-between gap-3">
           <div>
             <h3 class="font-semibold mb-1">${t.name}</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400">${t.desc}</p>
+            <p class="text-xs text-gray-500 ">${t.desc}</p>
           </div>
           <div lass="flex flex-wrap gap-1 self-start">${t.tags}</div>
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
-          <a href="Calculator.html" class="bg-blue-600 p-2 text-white dark:bg-gray-950 dark:border-gray-900 border border-gray-300 mb-2 rounded-sm text-sm">Open it!</a>
+          <a href="Calculator.html" class="bg-blue-600 p-2 text-white border border-gray-300 mb-2 rounded-sm text-sm">Open it!</a>
         </div>
       </article>`;
     }
@@ -80,7 +80,7 @@ const tools = [
     $('#search').addEventListener('input', applyFilters);
 
     $$('.chip').forEach(chip => {
-      chip.classList.add('rounded-full','border','border-gray-300/70','dark:border-gray-700','px-3','py-1.5','hover:bg-gray-50','dark:hover:bg-gray-800');
+      chip.classList.add('rounded-full','border','border-gray-300/70','px-3','py-1.5','hover:bg-gray-50');
       chip.addEventListener('click', () => {
         const tag = chip.dataset.tag;
         if (activeTags.has(tag)) { activeTags.delete(tag); chip.classList.remove('chip--active'); }

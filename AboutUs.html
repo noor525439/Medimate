@@ -20,38 +20,15 @@
   </style>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            
-            colors: {
-              brand: {
-                50:  '#eefaff',
-                100: '#d6f0ff',
-                200: '#b0e3ff',
-                300: '#7fd1ff',
-                400: '#48bbff',
-                500: '#189bff',
-                600: '#0f79db',
-                700: '#0a5cb0',
-                800: '#074885',
-                900: '#053864'
-              }
-            }
-          }
-        }
-      }
-    </script>
+   
   </head>
 
-  <body class=" text-gray-900 dark:bg-gray-950 dark:text-gray-100 flex flex-col overflow-x-hidden">
- <header class="sticky bg-gray-50 bg-gray-50 top-0 z-50 border-b border-gray-200  dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
+  <body class=" text-gray-900  flex flex-col overflow-x-hidden">
+ <header class="sticky bg-gray-50 bg-gray-50 top-0 z-50 border-b border-gray-200 backdrop-blur">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
         
         <!-- Logo -->
-        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 " aria-hidden="true" fill="currentColor">
           <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
         </svg>
 
@@ -61,15 +38,15 @@
 
         <!-- Navigation -->
         <nav class="hidden md:flex justify-between items-center px-[365px] gap-5"> 
-          <a href="index.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">Home</a>
-          <a href="AboutUs.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">About us</a>
-          <a href="ContactUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-900">Contact us</a>
+          <a href="index.html" class="text-sm font-semibold text-gray-900 ">Home</a>
+          <a href="AboutUs.html" class="text-sm font-semibold text-gray-900 ">About us</a>
+          <a href="ContactUs.html" class="text-sm font-semibold text-gray-700 ">Contact us</a>
         </nav>
 
         <!-- Right side -->
         <div class="flex items-center gap-2"> 
           
-          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+          <a href="SignUp.html" class="border border-gray-200  px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
         </div>
       </div>
     </header>
@@ -82,7 +59,7 @@
         About
         <span class="bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-900 bg-clip-text text-transparent">Medimate</span>
       </div>
-      <p class="max-w-4xl text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-2 mb-8">
+      <p class="max-w-4xl text-base sm:text-lg text-gray-600  leading-relaxed mt-2 mb-8">
         Medimate is driven by a vision to make healthcare simpler, smarter, and more accessible for everyone.
         We focus on reducing the challenges doctors and clinics face in managing patients.
         Our solutions are designed to streamline workflows and save valuable time.
@@ -114,24 +91,24 @@
         <!-- Text Content -->
         <div class="flex-1 space-y-8 text-left md:text-start">
           <div>
-            <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Accuracy</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">We ensure all information is verified by our experts and regularly updated.</p>
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900  mb-2">Accuracy</h3>
+            <p class="text-gray-600  text-sm sm:text-base">We ensure all information is verified by our experts and regularly updated.</p>
           </div>
           <div>
-            <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Usability</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Our platform is designed to be user-friendly to all healthcare professionals.</p>
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900  mb-2">Usability</h3>
+            <p class="text-gray-600  text-sm sm:text-base">Our platform is designed to be user-friendly to all healthcare professionals.</p>
           </div>
           <div>
-            <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Support</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">We offer excellent customer support to assist you with questions or issues.</p>
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900  mb-2">Support</h3>
+            <p class="text-gray-600 text-sm sm:text-base">We offer excellent customer support to assist you with questions or issues.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200/70 dark:border-gray-800 py-6 mt-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+    <footer class="border-t border-gray-200/70  py-6 mt-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500  flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
         <p>© <span id="year"></span> MedHub Clinics • HIPAA-ready UI components • WCAG AA</p>
         <div class="flex gap-4">
           <a class="hover:underline" href="#" aria-label="Privacy">Privacy</a>
@@ -140,17 +117,6 @@
       </div>
     </footer>
 
-    <script>
-      // Year auto update
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Dark mode toggle
-      const themeToggle = document.getElementById("themeToggle");
-      const html = document.documentElement;
-      themeToggle.addEventListener("click", () => {
-        html.classList.toggle("dark");
-      });
-    </script>
-
+   
   </body>
 </html>

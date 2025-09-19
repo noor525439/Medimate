@@ -25,15 +25,15 @@
     :focus-visible { outline: 2px solid #189bff; outline-offset: 2px; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+<body class="bg-gray-50 text-gray-900 ">
   <!-- Global wrapper -->
   <div id="app" class="min-h-screen flex flex-col">
     <!-- Top bar -->
-     <header class="sticky bg-gray-50 bg-gray-50 top-0 z-50 border-b border-gray-200  dark:bg-gray-900 dark:border-gray-800 backdrop-blur">
+     <header class="sticky bg-gray-50 bg-gray-50 top-0 z-50 border-b border-gray-200   backdrop-blur">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
         
         <!-- Logo -->
-        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 dark:text-brand-400" aria-hidden="true" fill="currentColor">
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-blue-700 " aria-hidden="true" fill="currentColor">
           <path d="M12 2a5 5 0 0 1 5 5v3h1a3 3 0 0 1 0 6h-1v3a5 5 0 0 1-10 0v-3H6a3 3 0 1 1 0-6h1V7a5 5 0 0 1 5-5Zm-3 8h6V7a3 3 0 0 0-6 0v3Zm6 2H9v7a3 3 0 0 0 6 0v-7Z"/>
         </svg>
 
@@ -43,15 +43,15 @@
 
         <!-- Navigation -->
         <nav class="hidden md:flex justify-between items-center px-[365px] gap-5"> 
-          <a href="index.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">Home</a>
-          <a href="AboutUs.html" class="text-sm font-semibold text-gray-900 dark:text-gray-900">About us</a>
-          <a href="ContactUs.html" class="text-sm font-semibold text-gray-700 dark:text-gray-900">Contact us</a>
+          <a href="index.html" class="text-sm font-semibold text-gray-900 ">Home</a>
+          <a href="AboutUs.html" class="text-sm font-semibold text-gray-900 ">About us</a>
+          <a href="ContactUs.html" class="text-sm font-semibold text-gray-700">Contact us</a>
         </nav>
 
         <!-- Right side -->
         <div class="flex items-center gap-2"> 
           
-          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-sm">Log Out</a>
+          <a href="SignUp.html" class="border border-gray-200  p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-sm">Log Out</a>
         </div>
       </div>
     </header>
@@ -66,13 +66,13 @@
             <div class="relative flex-1">
               <label for="search" class="sr-only">Search tools</label>
               <input id="search" type="search" placeholder="Search by name (e.g., ‘diabetes’, ‘CPAP’, ‘pain diary’)…"
-                     class="w-full rounded-md border border-gray-300/80 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2.5 pr-10 text-sm shadow-sm focus:ring-2 focus:ring-brand-400" />
+                     class="w-full rounded-md border border-gray-300/80  bg-white  px-4 py-2.5 pr-10 text-sm shadow-sm focus:ring-2 focus:ring-brand-400" />
               <div class="pointer-events-none absolute right-3 top-2.5 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </div>
             <div class="flex gap-2">
-              <button id="clearFilters" class="rounded-sm border border-gray-300 bg-blue-600 dark:border-gray-700 p-2 text-sm hover:bg-blue-900 dark:hover:bg-gray-800 text-white">Clear</button>
+              <button id="clearFilters" class="rounded-sm border border-gray-300 bg-blue-600  p-2 text-sm hover:bg-blue-900  text-white">Clear</button>
              
             </div>
           </div>
@@ -95,15 +95,15 @@
         </div>
 
         <!-- Empty state -->
-        <div id="empty" class="hidden mt-12 text-center text-gray-500 dark:text-gray-400">
+        <div id="empty" class="hidden mt-12 text-center text-gray-500 ">
           No results. Try a different search or clear filters.
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200/70 dark:border-gray-800 py-6">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+    <footer class="border-t border-gray-200/70  py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500  flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
         <p>© <span id="year"></span> MedHub Clinics • HIPAA‑ready UI components • WCAG AA</p>
         <div class="flex gap-4">
           <a class="hover:underline" href="#" aria-label="Privacy">Privacy</a>
@@ -115,16 +115,16 @@
 
   <!-- Modals -->
   <dialog id="modal" class="rounded-xl p-0 backdrop:bg-black/40 w-[92vw] md:w-[720px]">
-    <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden">
-      <div class="flex items-start justify-between px-5 py-4 border-b border-gray-200/70 dark:border-gray-800">
+    <div class="bg-white rounded-xl overflow-hidden">
+      <div class="flex items-start justify-between px-5 py-4 border-b border-gray-200/70 ">
         <div>
           <h2 id="modalTitle" class="text-lg font-semibold"></h2>
-          <p id="modalSubtitle" class="text-sm text-gray-500 dark:text-gray-400"></p>
+          <p id="modalSubtitle" class="text-sm text-gray-500 "></p>
         </div>
-        <button id="modalClose" class="rounded-md border border-gray-300/80 dark:border-gray-700 px-2 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">Close</button>
+        <button id="modalClose" class="rounded-md border border-gray-300/80  px-2 py-1.5 text-sm hover:bg-gray-50 ">Close</button>
       </div>
       <div class="px-5 py-5">
-        <div id="modalBody" class="prose dark:prose-invert max-w-none">
+        <div id="modalBody" class="prose max-w-none">
           <!-- Dynamic content inserted by JS -->
         </div>
       </div>
