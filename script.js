@@ -46,7 +46,7 @@ const tools = [
           <div lass="flex flex-wrap gap-1 self-start">${t.tags}</div>
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
-          <a href="Calculator.html" class="bg-blue-600 text-white dark:bg-gray-950 dark:border-gray-900 border border-gray-300 px-2 py-1 mb-2 rounded-md ">Open it!</a>
+          <a href="Calculator.html" class="bg-blue-600 p-2 text-white dark:bg-gray-950 dark:border-gray-900 border border-gray-300 mb-2 rounded-sm text-sm">Open it!</a>
         </div>
       </article>`;
     }
@@ -132,17 +132,8 @@ const tools = [
       openModal(action + ' • ' + tool.name, tool.desc, bodies[action] || '<p>Action placeholder.</p>');
     });
 
-    // --- Theme ---------------------------------------------------------------
-    const themeBtn = $('#themeToggle');
-    function setTheme(dark) {
-      document.documentElement.classList.toggle('dark', dark);
-      themeBtn.setAttribute('aria-pressed', String(dark));
-      themeBtn.querySelector('span')?.classList.toggle('line-through', dark);
-    }
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark);
-    themeBtn.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
-
+    
+   
     // --- Init ----------------------------------------------------------------
     renderGrid(tools);
     $('#year').textContent = new Date().getFullYear();

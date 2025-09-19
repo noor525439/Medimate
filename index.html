@@ -19,29 +19,7 @@
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50:  '#eefaff',
-              100: '#d6f0ff',
-              200: '#b0e3ff',
-              300: '#7fd1ff',
-              400: '#48bbff',
-              500: '#189bff',
-              600: '#0f79db',
-              700: '#0a5cb0',
-              800: '#074885',
-              900: '#053864'
-            }
-          }
-        }
-      },
-      darkMode: 'class'
-    }
-  </script>
+  
   <style>
     /* Focus ring for keyboard users */
     :focus-visible { outline: 2px solid #189bff; outline-offset: 2px; }
@@ -73,7 +51,7 @@
         <!-- Right side -->
         <div class="flex items-center gap-2"> 
           
-          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md">Log Out</a>
+          <a href="SignUp.html" class="border border-gray-200 dark:border-blue-950 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-sm">Log Out</a>
         </div>
       </div>
     </header>
@@ -94,20 +72,20 @@
               </div>
             </div>
             <div class="flex gap-2">
-              <button id="clearFilters" class="rounded-md border border-gray-300 bg-blue-600 dark:border-gray-700 px-3 py-2 text-sm hover:bg-blue-900 dark:hover:bg-gray-800 text-white">Clear</button>
+              <button id="clearFilters" class="rounded-sm border border-gray-300 bg-blue-600 dark:border-gray-700 p-2 text-sm hover:bg-blue-900 dark:hover:bg-gray-800 text-white">Clear</button>
              
             </div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-2 text-sm">
+          <div class="flex flex-wrap items-center gap-5 text-sm">
             <span class="text-gray-500 mr-2">Filters:</span>
-            <button class="border border-gray-200 p-2 rounded-md" data-tag="All"><i class="fa-solid fa-layer-group"></i>     All</button>
-            <button class="border border-gray-200 p-2 rounded-md" data-tag="Favourites"><i class="fa-solid fa-star"></i>    Favourites</button>
-            <button class="border border-gray-200 p-2 rounded-md" data-tag="vitals"><i class="fa-solid fa-water"></i>  Vitals</button>
-            <button class="border border-gray-200 p-2 rounded-md" data-tag="calc"><i class="fa-solid fa-calculator"></i>  Calculators</button>
-            <button class="border border-gray-200 p-2 rounded-md" data-tag="resp"><i class="fa-solid fa-lungs"></i>   Respiratory</button>
-            <button class="border border-gray-200 p-2 rounded-md"  data-tag="mental"><i class="fa-solid fa-head-side-virus"></i>  Mental Health</button>
-            <button class="border border-gray-200 p-2 rounded-md" data-tag="lifestyle"><i class="fa-solid fa-apple-whole"></i>  Lifestyle</button>
+            <button class="border border-gray-200 py-2 px-3 rounded-sm" data-tag="All"><i class="fa-solid fa-layer-group"></i>         All</button>
+            <button class="border border-gray-200 py-2 px-3 rounded-sm" data-tag="Favourites"><i class="fa-solid fa-star"></i>        Favourites</button>
+            <button class="border border-gray-200 p-2 px-3 py-2 rounded-sm" data-tag="vitals"><i class="fa-solid fa-water"></i>         Vitals</button>
+            <button class="border border-gray-200 py-2 px-3 rounded-sm" data-tag="calc"><i class="fa-solid fa-calculator"></i>         Calculators</button>
+            <button class="border border-gray-200 py-2 px-3 rounded-sm" data-tag="resp"><i class="fa-solid fa-lungs"></i>        Respiratory</button>
+            <button class="border border-gray-200 py-2 px-3 rounded-sm"  data-tag="mental"><i class="fa-solid fa-head-side-virus"></i>         Mental Health</button>
+            <button class="border border-gray-200 py-2 px-3 rounded-sm" data-tag="lifestyle"><i class="fa-solid fa-apple-whole"></i>      Lifestyle</button>
           </div>
         </div>
 

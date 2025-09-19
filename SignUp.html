@@ -26,35 +26,51 @@
     
     <form class="space-y-4">
 
+      <!-- NPI -->
       <div class="w-full gap-4">
-        <input type="text" placeholder="npi" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="text" placeholder="NPI" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
         <p class="text-gray-400 text-sm mx-2">optional</p>
-       
       </div>
-              <div class="text-gray-400">__________________or__________________</div>
+
+      <!-- Divider -->
+      <div class="flex items-center my-4">
+        <div class="flex-grow border-t border-gray-300"></div>
+        <span class="mx-2 text-gray-400 text-sm">or</span>
+        <div class="flex-grow border-t border-gray-300"></div>
+      </div>
+
       <!-- First & Last Name -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input type="text" placeholder="First Name" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
-        <input type="text" placeholder="Last Name" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="text" placeholder="First Name" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="text" placeholder="Last Name" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
       </div>
 
       <!-- Password -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input type="password" placeholder="Password" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
-        <input type="password" placeholder="Confirm Password" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="password" placeholder="Password" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="password" placeholder="Confirm Password" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
       </div>
 
       <!-- Country & Occupation -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input type="text" placeholder="Country" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
-        <input type="text" placeholder="Occupation" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="text" placeholder="Country" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+        <input type="text" placeholder="Occupation" 
+          class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
       </div>
 
       <!-- Phone -->
-      <input type="tel" placeholder="Phone Number" class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
+      <input type="tel" placeholder="Phone Number" 
+        class="w-full p-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-blue-400 outline-none">
 
       <!-- Submit -->
-      <button type="submit" class="w-full bg-blue-600 text-white font-medium p-2 rounded-sm shadow-md hover:bg-blue-700 transition">
+      <button type="submit" 
+        class="w-full bg-blue-600 text-white font-medium p-2 rounded-sm shadow-md hover:bg-blue-700 transition">
         Sign Up
       </button>
     </form>
